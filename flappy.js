@@ -119,11 +119,11 @@ function moveDown() {
 }
 
 function player_jump() {
-    player.body.velocity.y = -200;
+    player.body.velocity.y = -300;
 }
 
 function game_over() {
-    //alert("YOU SHALL DIE IN VALHALLA TONIGHT! GAME OVER ");
+    //alert("YOU SHALL DINE IN VALHALLA TONIGHT! GAME OVER ");
     location.reload();
 
 }
