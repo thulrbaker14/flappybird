@@ -49,7 +49,7 @@ function create() {
     game.add.audio("score");
 
     //pipeGenerator();
-    game.time.events.loop(1.25*Phaser.Timer.SECOND, pipeGenerator)
+    game.time.events.loop(1 * Phaser.Timer.SECOND, pipeGenerator)
 
     var x = 100;
     var y = 300;
@@ -59,7 +59,7 @@ function create() {
     player.checkWorldBounds = true;
     player.body.velocity.y = -200;
     //player.body.velocity.x = 100;
-    player.body.gravity.y = 400;
+    player.body.gravity.y = 600;
 
 
 
