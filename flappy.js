@@ -16,7 +16,7 @@ var game = new Phaser.Game(700, 400, Phaser.AUTO, 'game', stateActions);
  * Loads all resources for the game and gives them names.
  */
 function preload() {
-    game.load.image("playerImg", "assets/flappy_viking.png");
+    game.load.image("playerImg", "assets/flappy-helmet.png");
     game.load.audio("score", "assets/point.ogg");
 }
 
