@@ -9,15 +9,16 @@ var player;
 // - renderer (go for Phaser.AUTO)
 // - element where the game will be drawn ('game')
 // - actions on the game state (or null for nothing)
-var game = new Phaser.Game(700, 400, Phaser.AUTO, 'game', stateActions);
+var game = new Phaser.Game(800, 400, Phaser.AUTO, 'game', stateActions);
 
 
 /*
  * Loads all resources for the game and gives them names.
  */
 function preload() {
-    game.load.image("playerImg", "assets/flappy-helmet.png");
+    game.load.image("playerImg", "assets/flappy_viking.png");
     game.load.audio("score", "assets/point.ogg");
+    game.load.image("pipe", "assets/pipe.png");
 }
 
 /*
@@ -48,9 +49,29 @@ function create() {
     game.input.keyboard.addKey(Phaser.Keyboard.DOWN).onDown.add(moveDown);
 
     game.add.audio("score");
+
+    pipeGenerator(150);
+    pipeGenerator(290);
+    pipeGenerator(450);
+    pipeGenerator(650)
+
 }
 
 
+function pipeGenerator(x) {
+    var gap = Math.floor(Math.random() * 5) + 1;
+
+    for(var count = 0; count < gap; count++) //for-loop
+    {
+        game.add.sprite(x, 50 * count, "pipe");
+    }
+
+    for(var count = gap + 3; count <= 8; count++) //for-loop
+    {
+        game.add.sprite(x, 50 * count, "pipe");
+    }
+
+}
 
 
 function clickHandler (event) {
@@ -62,7 +83,7 @@ function spaceHandler() {
     //alert("you pressed the spacebar!");
     score = score + 1;
     game.sound.play("score");
-    alert(score);
+    //alert(score);
 }
 function moveRight() {
     player.x+=20;
